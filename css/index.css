@@ -310,7 +310,7 @@ html, body {
 .eyecontainer {
     width: 100%;
     display: flex;
-    justify-content: center; /* 수평 중앙 정렬 */
+    justify-content: center; /* 수평 ���앙 정렬 */
     align-items: center; /* 수직 중앙 정렬 */
 }
 
@@ -509,7 +509,7 @@ html, body {
 /* 대표 작품 */
 .mockupcontainer {
     display: flex; /* 가로 방향으로 배치 */
-    align-items: flex-start; /* 상단 정렬 */
+    align-items: flex-start; /* 상��� 정렬 */
     padding-bottom: 10%;
     padding-top: 23%;
     position: relative; /* mockup_text와 h2의 절대 위치를 위한 상대적 위치 설정 */
@@ -619,7 +619,7 @@ html, body {
     .mockupcontainer h2 {
         font-size: 60px; /* 폰트 크기 조정 */
         margin-left: 0; /* 왼쪽 여백 제거 */
-        position: relative; /* 절대 위치에서 상대 위치로 ���경 */
+        position: relative; /* 절대 위치에서 상대 위치로 경 */
         top: 0; /* 위치 조정 */
         left: 0; /* 위치 조정 */
         text-align: center; /* 중앙 정렬 */
@@ -775,7 +775,7 @@ html, body {
 .project_info {
     display: flex; /* 내부 요소를 flexbox로 설정 */
     justify-content: space-between; /* 제목과 버튼 사이의 간격을 균등하게 설정 */
-    align-items: center; /* 수직 중앙 정렬 */
+    align-items: center; /* ��직 중앙 정렬 */
     width: 100%; /* 너비를 100%로 설정 */
     max-width: 546px;
     height: 20px; /* 고정 높이 */
@@ -1256,17 +1256,24 @@ html, body {
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 
-
+.sliding-images{
+    width: 60%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
 
 
 .slide-image {
     position: absolute;
-    width: 250px; /* 이미지 크기 조절 */
-    height: 150px;
+    width: clamp(150px, 20vw, 250px); /* 최소 150px, 최대 250px로 화면 크기에 따라 조절 */
+    height: auto;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-    object-fit: cover;
+    object-fit: cover; /* fill 대신 cover 사용하여 비율 유지 */
     border-radius: 10px;
+    float: left;
 }
 
 .profileimg {
@@ -1283,6 +1290,14 @@ html, body {
         padding: 0 20px;
         justify-content: center;
         align-items: center;
+    }
+    .sliding-images{
+        width: 60%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        padding-bottom: 10%;
     }
 }
 
@@ -1311,6 +1326,10 @@ html, body {
     .abouttitle{
         font-size: 29px;
         text-align: right;
+    }
+
+    .slide-image {
+        width: clamp(100px, 15vw, 150px); /* 모바일에서는 더 작은 크기로 조정 */
     }
 }
 
