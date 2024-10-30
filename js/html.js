@@ -1,4 +1,4 @@
-window.addEventListener('load', function() {
+/* window.addEventListener('load', function() {
     // 이미 방문했는지 확인
     if (sessionStorage.getItem('hasVisited')) {
         const loadingScreen = document.querySelector('.loading-screen');
@@ -28,4 +28,4 @@ window.addEventListener('load', function() {
         }, 800);
       }, 500);
     }, 3000);
-});
+}); */
