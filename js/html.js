@@ -27,5 +27,5 @@ window.addEventListener('load', function() {
           loadingScreen.style.visibility = 'hidden';
         }, 800);
       }, 500);
-    }, 2400);
+    }, 3000);
 });
