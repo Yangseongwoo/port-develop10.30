@@ -1257,6 +1257,18 @@ html, body {
 }
 
 
+
+
+.slide-image {
+    position: absolute;
+    width: 250px; /* 이미지 크기 조절 */
+    height: 150px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
 .profileimg {
     width: 50%; /* 이미지 크기 조정 */
     height: auto;
