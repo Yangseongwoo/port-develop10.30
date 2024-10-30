@@ -5,11 +5,11 @@ function showImage(event) {
     const y = event.clientY;
 
     images.forEach((img, index) => {
-        img.style.left = `${x - 50}px`; // 커서 위치에 맞추어 이미지 위치 설정
-        img.style.top = `${y - 50}px`; // 커서 위치에 맞추어 이미지 위치 설정
+        img.style.left = `${x - 30}px`; // 커서 위치에 맞추어 이미지 위치 설정
+        img.style.top = `${y - 30}px`; // 커서 위치에 맞추어 이미지 위치 설정
 
-        // 이미지가 커서 위치에 따라 보이도록 설정
-        if (index === Math.floor(x / 100) % images.length) {
+        // 이미지 전환 간격을 늘리기 위해 300으로 변경 (기존 100)
+        if (index === Math.floor(x / 200) % images.length) {
             img.style.display = 'block';
             img.style.opacity = '1'; // 이미지가 보이도록 투명도 조정
         } else {
