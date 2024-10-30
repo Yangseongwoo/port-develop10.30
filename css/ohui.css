@@ -167,5 +167,9 @@ body{
     .additional-section-image {
         margin-bottom: 20px; /* 이미지 간의 여백 */
     }
+
+    .section-description{
+        display: none;
+    }
 }
 

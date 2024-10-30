@@ -223,7 +223,7 @@ html, body {
   .eye {
     width: 300px; /* 150% 증가 */
     height: 150px; /* 150% 증가 */
-    border: 2px solid #000;
+    border: 0.5px solid #000;
     border-radius: 50%;
     position: relative;
     background: #fff;
@@ -277,7 +277,7 @@ html, body {
     height: 150px; /* 150% 증가 */
     background-color: #ffffff;
     border-radius: 100%;
-    border: 2px solid #000;
+/*     border: 0.5px solid #00000063; */
     position: relative;
     overflow: hidden;
 }
@@ -619,7 +619,7 @@ html, body {
     .mockupcontainer h2 {
         font-size: 60px; /* 폰트 크기 조정 */
         margin-left: 0; /* 왼쪽 여백 제거 */
-        position: relative; /* 절대 위치에서 상대 위치로 변경 */
+        position: relative; /* 절대 위치에서 상대 위치로 ���경 */
         top: 0; /* 위치 조정 */
         left: 0; /* 위치 조정 */
         text-align: center; /* 중앙 정렬 */
@@ -867,6 +867,20 @@ html, body {
 }
 
 
+@media (max-width: 1024px){
+    .project_info {
+        display: flex; /* 내부 요소를 flexbox로 설정 */
+        justify-content: space-between; /* 제목과 버튼 사이의 간격을 균등하게 설정 */
+        align-items: center; /* 수직 중앙 정렬 */
+        width: 100%; /* 너비를 100%로 설정 */
+        max-width: 546px;
+        height: 20px; /* 고정 높이 */
+        padding-top: 0%;
+        padding-bottom: 10%;
+    }
+}
+
+
 @media (max-width: 768px) {
     .project_container {
         flex-direction: column; /* 세로 방향으로 나열 */
@@ -927,32 +941,34 @@ html, body {
 
 /* Archives 파트 */
 .archives {
-    width: 1850px; /* 전체 섹션 너비 */
-    margin: 0 auto; /* 중앙 정렬 */
-    padding: 20px 0; /* 상하 여백 */
+    width: 100%; /* 전체 너비로 변경 */
+    max-width: 1850px; /* 최대 너비 설정 */
+    margin: 0 auto;
+    padding: 20px;
     padding-bottom: 20%;
-
 }
 
 .section2_title {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 700;
     padding-bottom: 3%;
-    font-size: 70px;
+    font-size: clamp(40px, 6vw, 70px);
     color: #9b9997;
     text-shadow: 2px 2px 5px rgba(73, 73, 73, 0.192), /* 그림자 */
     0 0 20px rgba(182, 182, 182, 0.6); /* 야광 효과 */
 }
 
 .archives-header {
+    width: 100%;
     max-width: 1850px;
-    display: flex; /* 가로로 정렬 */
-    padding-bottom: 2%; /* 하단 여백 */
+    display: flex;
+    padding-bottom: 2%;
+    gap: 20px; /* 헤더 항목 간 간격 추가 */
 }
 
 .archives-header h2 {
     margin: 0; /* 기본 여백 제거 */
-    font-size: 24px; /* 텍스트 크기 */
+    font-size: clamp(14px, 1.5vw, 17px); /* 반응형 폰트 크기 */
 }
 
 .underline {
@@ -962,37 +978,35 @@ html, body {
 }
 
 .archives-content {
-    display: flex; /* 가로로 정렬 */
-    justify-content: space-between; /* 항목 간의 공간을 균등하게 배분 */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 20px;
-    position: relative; /* 자식 요소에 대한 위치 기준 설정 */
+    position: relative;
+    gap: 20px; /* 콘텐츠 항목 간 간격 추가 */
 }
 
 .archives-content .item {
-    font-size: 18px; /* 항목 텍스트 크기 */
+    font-size: clamp(14px, 1.5vw, 17px);
     color: black; /* 텍스트 색상 */
 }
 
 .title {
-    width: 400px;
-    font-size: 17px;
-    color: #000000;
-    font-weight: bold;
+    width: 25%; /* 비율로 변경 */
+    min-width: 200px; /* 최소 너비 설정 */
+    font-size: clamp(14px, 1.5vw, 17px); /* 반응형 폰트 크기 */
 }
 
 .category {
-    width: 100%;
-    max-width: 1380px;
-    font-size: 17px;
-    color: #000000;
-    font-weight: bold;
+    width: 50%; /* 비율로 변경 */
+    font-size: clamp(14px, 1.5vw, 17px);
 }
 
 .date {
-    margin-left: auto; /* 오른쪽 끝으로 이동 */
-    font-size: 17px;
-    color: #000000;
-    font-weight: bold;
+    width: 25%; /* 비율로 변경 */
+    min-width: 100px;
+    font-size: clamp(14px, 1.5vw, 17px);
+    text-align: right;
 }
 
 .item1 {
@@ -1055,15 +1069,9 @@ html, body {
 /* archive 아래 공간 */
 
 .image-display {
-    width: 70%;
-    height: 0;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    overflow: hidden;
-    margin-bottom: 20px;
-    background-color: #EEEDED;
-    transition: height 0.5s ease;
+    width: 100%;
+    max-width: 1850px;
+    margin: 0 auto;
 }
 
 .description-text {
@@ -1151,7 +1159,7 @@ html, body {
 
     .archives {
         width: 100%;
-        padding: 10px 20px;
+        padding: 15px;
     }
 
     .archives-content:hover .project-image {
@@ -1169,85 +1177,35 @@ html, body {
 @media (max-width: 768px) {
     .archives {
         width: 100%;
-        padding: 10px 20px;
+        padding: 15px;
     }
 
     .section2_title {
-        font-size: 60px;
+        font-size: clamp(40px, 6vw, 70px);
+    }
+    
+    .archives-content {
+        flex-wrap: wrap; /* 필요시 줄바꿈 */
     }
 
     .archives-header {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
+        flex-direction: column;
+        gap: 10px;
     }
-
-    .archives-header h2 {
-        font-size: 18px;
-        margin: 5px;
-        flex: 1;
-        text-align: center;
-    }
-
+    
     .archives-content {
         flex-direction: column;
-        align-items: flex-start;
+        gap: 10px;
     }
-
-    .archives-content .item {
-        font-size: 16px;
-    }
-
-    .project-image {
+    
+    .title, .category, .date {
         width: 100%;
-        height: auto;
-    }
-
-    /* 이미지 디스플레이 모바일 스타일 수정 */
-    .image-display {
-        width: 100%;
-        flex-direction: column;
-        height: auto;
-        padding: 20px;
-    }
-
-    .image-display img {
-        width: 200%;
-        height: auto;
-        margin-bottom: 20px;
-    }
-
-    .description-text {
-        padding: 0;
-        max-width: 100%;
-    }
-
-    .project-description {
-        padding: 0;
-        max-width: 100%;
-    }
-
-    .image-display.show {
-        height: auto;
-        max-height: none;
-    }
-
-    #cursor-image {
-        width: 150px;
-    }
-
-    .category {
-        display: none;
-    }
-
-    .title {
-        display: flex;
+        min-width: unset;
         text-align: left;
     }
-
-    .project-image {
-        display: none;
+    
+    .image-display {
+        height: auto;
     }
 }
 
@@ -1305,6 +1263,17 @@ html, body {
     z-index: 1;
     padding-top: 7%;
 }
+
+@media (max-width: 1768px) {
+    .outer_container {
+        width: 100%;
+        display: flex;
+        padding: 0 20px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 
 @media (max-width: 1024px){
     .outer_container {
