@@ -310,7 +310,7 @@ html, body {
 .eyecontainer {
     width: 100%;
     display: flex;
-    justify-content: center; /* 수평 ���앙 정렬 */
+    justify-content: center; /* 수평 앙 정렬 */
     align-items: center; /* 수직 중앙 정렬 */
 }
 
@@ -320,6 +320,8 @@ html, body {
     background-color: #000000;
     border-radius: 10px;
     margin: 0 auto; /* 자동 마진으로 중앙 정렬 */
+    position: relative;
+    overflow: hidden;
 }
 
 
@@ -327,10 +329,13 @@ html, body {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
     pointer-events: none;
     z-index: 1; /* 별이 다른 요소 위에 보이도록 설정 */
+    overflow: hidden;
 }
 
 .star {
@@ -341,16 +346,18 @@ html, body {
     border-radius: 50%;
     box-shadow: 0 0 3px #ffffff;
     animation: float 15s linear infinite; /* 떠다니는 애니메이션 추가 */
+    overflow: hidden;
 }
 
-@keyframes float {
+
+/* @keyframes float {
     from {
-        transform: translateY(370px); /* eyewrap의 height만큼 */
+        transform: translateY(370px); 
     }
     to {
         transform: translateY(-10px);
     }
-}
+} */
 
 
 @media (max-width: 1826px) {
@@ -539,7 +546,7 @@ html, body {
 /* 대표 작품 */
 .mockupcontainer {
     display: flex; /* 가로 방향으로 배치 */
-    align-items: flex-start; /* 상��� 정렬 */
+    align-items: flex-start; /* 상 정렬 */
     padding-bottom: 10%;
     padding-top: 23%;
     position: relative; /* mockup_text와 h2의 절대 위치를 위한 상대적 위치 설정 */
@@ -571,6 +578,13 @@ html, body {
 
 .mockup h1 {
     margin: 0; /* 기본 여백 제거 */
+}
+
+.highlight2 {
+    font-family: "Gloock", serif;
+    color: rgb(0, 99, 156);
+    text-shadow: 2px 2px 5px rgba(73, 73, 73, 0.466), /* 그림자 */
+    0 0 20px rgba(182, 182, 182, 0.74); /* 야광 효과 */
 }
 
 .mockup_text {
@@ -774,7 +788,7 @@ html, body {
     font-weight: 700;
     padding-left: 35px;
     padding-top: 2%;
-    color: #9b9997;
+    color: rgb(0, 99, 156);
     text-shadow: 2px 2px 5px rgba(73, 73, 73, 0.192), /* 그림자 */
     0 0 20px rgba(182, 182, 182, 0.6); /* 야광 효과 */
 }
@@ -787,6 +801,7 @@ html, body {
     width: 546px; /* 카드 너비 고정 */
     position: relative; /* 상대 위치 설정 */
     overflow: hidden;
+    border-radius: 10px;
 }
 
 
@@ -795,7 +810,8 @@ html, body {
     height: 674px; /* 비율 유지 */
     border-style: none; /* 테두리 제거 */
     cursor: pointer;
-    transition: transform 0.3s ease; /* 부드러운 확대 효과 */
+    transition: transform 0.3s ease; /* 부드러운 확대 ���과 */
+    border-radius: 10px;
 }
 
 .project_card img:hover {
@@ -805,34 +821,38 @@ html, body {
 .project_info {
     display: flex; /* 내부 요소를 flexbox로 설정 */
     justify-content: space-between; /* 제목과 버튼 사이의 간격을 균등하게 설정 */
-    align-items: center; /* ��직 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
     width: 100%; /* 너비를 100%로 설정 */
     max-width: 546px;
     height: 20px; /* 고정 높이 */
     font-family: "Plus Jakarta Sans", sans-serif;
     letter-spacing: -1px;
+    padding: 0 10px;
 }
 
 .project_info h2 {
-    font-size: 20px;
-    margin: 0; /* 기본 여백 제거 */
+    font-size: clamp(1em, 1.5vw, 20px); /* 최소 1em, 최대 20px로 설정 */
+    margin: 0;
 }
 
 .project_info p {
-    margin-left: -35%; /* p 태그의 왼쪽 여백을 줄여 간격을 좁힘 */
-    margin-right: 0; /* 오른쪽 여백 제거 (필요시) */
+    font-size: clamp(0.875em, 1.2vw, 16px); /* 최소 0.875em, 최대 16px로 설정 */
+    margin-left: -35%;
+    margin-right: 0;
     color: #616161;
 }
 
 .project_info button {
-    width: 100px;
-    height: 30px;
+    width: clamp(80px, 8vw, 100px); /* 최소 80px, 최대 100px */
+    height: clamp(25px, 3vw, 30px); /* 최소 25px, 최대 30px */
     border-radius: 100px;
     background-color: #EEEDED;
     color: #2A2928;
     outline: solid 1px black;
-    border: none; /* 기본 테두리 제거 */
+    border: none;
     cursor: pointer;
+    font-size: clamp(0.875rem, 1vw, 1rem); /* 폰트 크기도 반응형으로 조정 */
+    padding: clamp(0.3em, 1vw, 0.5em) clamp(0.8em, 2vw, 1.2em); /* 패딩도 반응형으로 조정 */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -842,21 +862,7 @@ html, body {
 }
 
 
-.project_info button {
-    width: 100px;
-    height: 30px;
-    border-radius: 100px;
-    background-color: #EEEDED;
-    color: #2A2928;
-    outline: solid 1px black;
-    border: none; /* 기본 테두리 제거 */
-    cursor: pointer;
-}
 
-.project_info button:hover{
-    background-color: #2A2928;
-    color: white;
-}
 
 .project_description {
     display: none; /* 기본적으로 숨김 */
@@ -941,9 +947,8 @@ html, body {
         transition: none; /* 애니메이션 제거 (필요시 조정) */
     }
 
-    .project_info p{
-        margin-left: -13%; /* p 태그의 왼쪽 여백을 줄여 간격을 좁힘 */
-        margin-right: 0; /* 오른쪽 여백 제거 (필요시) */
+    .project_info p {
+        margin-left: -15%;
     }
 
     .project_title{
@@ -983,7 +988,7 @@ html, body {
     font-weight: 700;
     padding-bottom: 3%;
     font-size: 70px;
-    color: #9b9997;
+    color: rgb(0, 99, 156);
     text-shadow: 2px 2px 5px rgba(73, 73, 73, 0.192), /* 그림자 */
     0 0 20px rgba(182, 182, 182, 0.6); /* 야광 효과 */
 }
@@ -1051,6 +1056,7 @@ html, body {
     font-size: 20px;
     color: #9b9997;
 }
+
 
 .archives-content .item3 {
     margin-left: auto; /* 오른쪽 끝으로 이동 */
@@ -1254,14 +1260,14 @@ html, body {
     font-size: 50px;
     text-align: left;
     font-family: "Plus Jakarta Sans", sans-serif;
-    color: #757575;
+    color: #292929;
     padding-top: 2%;
 }
 
 
 .highlight {
     font-family: "Gloock", serif;
-    color: rgb(0, 0, 0);
+    color: rgb(0, 99, 156);
     text-shadow: 2px 2px 5px rgba(73, 73, 73, 0.466), /* 그림자 */
     0 0 20px rgba(182, 182, 182, 0.74); /* 야광 효과 */
 }
