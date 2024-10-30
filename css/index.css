@@ -941,34 +941,32 @@ html, body {
 
 /* Archives 파트 */
 .archives {
-    width: 100%; /* 전체 너비로 변경 */
-    max-width: 1850px; /* 최대 너비 설정 */
-    margin: 0 auto;
-    padding: 20px;
+    width: 1850px; /* 전체 섹션 너비 */
+    margin: 0 auto; /* 중앙 정렬 */
+    padding: 20px 0; /* 상하 여백 */
     padding-bottom: 20%;
+
 }
 
 .section2_title {
     font-family: "Plus Jakarta Sans", sans-serif;
     font-weight: 700;
     padding-bottom: 3%;
-    font-size: clamp(40px, 6vw, 70px);
+    font-size: 70px;
     color: #9b9997;
     text-shadow: 2px 2px 5px rgba(73, 73, 73, 0.192), /* 그림자 */
     0 0 20px rgba(182, 182, 182, 0.6); /* 야광 효과 */
 }
 
 .archives-header {
-    width: 100%;
     max-width: 1850px;
-    display: flex;
-    padding-bottom: 2%;
-    gap: 20px; /* 헤더 항목 간 간격 추가 */
+    display: flex; /* 가로로 정렬 */
+    padding-bottom: 2%; /* 하단 여백 */
 }
 
 .archives-header h2 {
     margin: 0; /* 기본 여백 제거 */
-    font-size: clamp(14px, 1.5vw, 17px); /* 반응형 폰트 크기 */
+    font-size: 24px; /* 텍스트 크기 */
 }
 
 .underline {
@@ -978,35 +976,37 @@ html, body {
 }
 
 .archives-content {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+    display: flex; /* 가로로 정렬 */
+    justify-content: space-between; /* 항목 간의 공간을 균등하게 배분 */
     margin-bottom: 20px;
-    position: relative;
-    gap: 20px; /* 콘텐츠 항목 간 간격 추가 */
+    position: relative; /* 자식 요소에 대한 위치 기준 설정 */
 }
 
 .archives-content .item {
-    font-size: clamp(14px, 1.5vw, 17px);
+    font-size: 18px; /* 항목 텍스트 크기 */
     color: black; /* 텍스트 색상 */
 }
 
 .title {
-    width: 25%; /* 비율로 변경 */
-    min-width: 200px; /* 최소 너비 설정 */
-    font-size: clamp(14px, 1.5vw, 17px); /* 반응형 폰트 크기 */
+    width: 400px;
+    font-size: 17px;
+    color: #000000;
+    font-weight: bold;
 }
 
 .category {
-    width: 50%; /* 비율로 변경 */
-    font-size: clamp(14px, 1.5vw, 17px);
+    width: 100%;
+    max-width: 1380px;
+    font-size: 17px;
+    color: #000000;
+    font-weight: bold;
 }
 
 .date {
-    width: 25%; /* 비율로 변경 */
-    min-width: 100px;
-    font-size: clamp(14px, 1.5vw, 17px);
-    text-align: right;
+    margin-left: auto; /* 오른쪽 끝으로 이동 */
+    font-size: 17px;
+    color: #000000;
+    font-weight: bold;
 }
 
 .item1 {
@@ -1069,9 +1069,15 @@ html, body {
 /* archive 아래 공간 */
 
 .image-display {
-    width: 100%;
-    max-width: 1850px;
-    margin: 0 auto;
+    width: 70%;
+    height: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: #EEEDED;
+    transition: height 0.5s ease;
 }
 
 .description-text {
