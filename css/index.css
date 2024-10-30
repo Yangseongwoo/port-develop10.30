@@ -11,6 +11,7 @@
     scroll-behavior: smooth; 
 }
 
+
 /* 전체 스크롤바 */
 ::-webkit-scrollbar {
     width: 7px; /* 세로 스크롤바 너비 */
@@ -142,11 +143,14 @@ html, body {
     border-radius: 16px; /* 타원형 버튼을 위한 반지름 */
     margin: 0 10px; /* 버튼 간격 */
     cursor: pointer;
-    flex: 1 1 150px; /* 최소 너비 설정 */
+    flex: 0 0 332px; /* 최소 너비 설정 */
     font-size: 16px;
     font-weight: 300;
     text-decoration: none; /* 링크의 기본 밑줄 제거 */
     transition: background-color 0.3s, color 0.3s; /* 부드러운 전환 효과 */
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    overflow: hidden; /* 넘치는 텍스트 숨김 */
+    text-overflow: ellipsis; /* 넘치는 텍스트를 ...으로 표시 */
 }
 
 
@@ -1345,7 +1349,7 @@ html, body {
     padding: 20px; /* 내부 여백 */
     border-radius: 8px; /* 모서리 둥글게 */
     backdrop-filter: blur(10px); /* 배경 블러 효과 */
-    height: 2000px;
+    height: 1600px;
 }
 
 .overlay_info {
@@ -1384,7 +1388,7 @@ html, body {
     justify-content: space-between; /* 양쪽 끝으로 정렬 */
     max-width: 1850px; /* 최대 너비 설정 */
     width: 100%; /* 전체 너비 설정 */
-    padding: 10px 0; /* 상하 여백 */
+    padding: 10px 20px; /* 상하 여백 */
     padding-bottom: 5%;
     padding-top: 5%;
 }
